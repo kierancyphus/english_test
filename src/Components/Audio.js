@@ -29,20 +29,25 @@ class Audio extends React.Component {
     return(
       <div className="container">
         <div className="header">
-          <img src="https://raw.githubusercontent.com/kierancyphus/english_test/master/tandem.png" />
+        <img src="https://raw.githubusercontent.com/kierancyphus/english_test/master/tandem.png" Style="display: block; margin: 20px auto 0px auto; padding: 50px 0"/>
+        <h1 Style="text-align: center; padding-bottom: 20px">Audio Files for English {this.test.toUpperCase()}</h1>
         </div>
         <div className="content">
-          <h3>Main Audio: You can listen to this two times etc</h3>
-          <OnlyPlayPauseButton src="https://raw.githubusercontent.com/kierancyphus/english_test/master/B1.mp4" test={this.test} />
-          <div className="questions">
+          <h3>Main Audio:</h3>
+          <h5>Use this audio to answer the fill in the blank questions 29 to 39. You will only be able to listen to the audio TWICE. You can play and pause the audio throughout the clip. </h5>
+          <OnlyPlayPauseButton src="https://raw.githubusercontent.com/kierancyphus/english_test/master/B1.mp4" test={this.test}/>
+          <hr/>
+          <div className="questions" Style="padding: 20px 0 20px 0">
             {questions.map(question =>
               <div key={"div" + question + this.test}>
-                <h3 key={"title" + question + this.test}>Question {21 + question}: </h3>
+                <h3 key={"title" + question + this.test}>Question {39 + question} / Audio #{0 + question}</h3>
+                <p>You can only listen to this audio clip once</p>
                 <OnlyPlayButton src={"https://raw.githubusercontent.com/kierancyphus/english_test/master/" + this.test + "-audio-" + question.toString() + ".m4a"}
                                 key={"button" + question + this.test}
                                 question={question}
                                 test={this.test}
                 />
+                <hr/>
               </div>
             )}
           </div>

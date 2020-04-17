@@ -181,6 +181,7 @@ class OnlyPlayPauseButton extends React.Component {
           ref={ref => this.ref = ref}
         />
         <Button onClick={this.handlePlay} disabled={this.state.disabled}>{ this.state.playing ? "Pause" : "Play" }</Button>
+        {/*
         <Button onClick={this.jump}>JUMP</Button>
         <Button onClick={this.handleReplay}>Replay</Button>
         <Button onClick={this.getTime}>Time</Button>
@@ -188,6 +189,7 @@ class OnlyPlayPauseButton extends React.Component {
         <Button onClick={this.checkCookie}>Check Cookie</Button>
         <Button onClick={this.removeCookie}>Remove Cookies</Button>
         <Button onClick={this.getDuration}>Get Duration</Button>
+        */}
         <Progress value={this.state.progress} />
       </div>
     )
