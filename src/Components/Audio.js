@@ -35,7 +35,7 @@ class Audio extends React.Component {
         <div className="content">
           <h3>Main Audio:</h3>
           <h5>Use this audio to answer the fill in the blank questions 29 to 39. You will only be able to listen to the audio TWICE. You can play and pause the audio throughout the clip. </h5>
-          <OnlyPlayPauseButton src="https://raw.githubusercontent.com/kierancyphus/english_test/master/B1.mp4" test={this.test}/>
+          <OnlyPlayPauseButton src={"https://raw.githubusercontent.com/kierancyphus/english_test/master/" + this.test + ".mp4"} test={this.test}/>
           <hr/>
           <div className="questions" Style="padding: 20px 0 20px 0">
             {questions.map(question =>
