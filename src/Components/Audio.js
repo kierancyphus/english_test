@@ -28,7 +28,7 @@ class Audio extends React.Component {
     const questions = [1,2,3,4,5,6];
     return(
       <div className="container">
-        <div className="header">
+        <div className="header" Style="">
         <img src="https://raw.githubusercontent.com/kierancyphus/english_test/master/tandem.png" Style="display: block; margin: 20px auto 0px auto; padding: 50px 0"/>
         <h1 Style="text-align: center; padding-bottom: 20px">Audio Files for English {this.test.toUpperCase()}</h1>
         </div>
