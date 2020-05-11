@@ -72,7 +72,7 @@ class OnlyPlayPauseButton extends React.Component {
     // returns a percentage if they haven't
 
     // used up their listens on previous visit
-    if (this.state.plays >= 2 && this.getTime() == 0){
+    if (this.state.plays >= 2 && this.getTime() === 0){
       this.setState({
         progress: 100
       }); return;
