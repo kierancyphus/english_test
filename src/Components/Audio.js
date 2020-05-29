@@ -26,7 +26,7 @@ class Audio extends React.Component {
         <hr/>
           <div className="questions" Style="padding: 10px 0 10px 0">
           <h3><u>Questions 35 to 45</u></h3>
-          <p>Please fill in the missing word on the exam. You can only listen to each audio once.</p>
+          <p>Please fill in the missing word on the exam. You can only listen to each audio twice.</p>
           <hr/>
             {questions.map(question =>
               <div key={"div" + question + this.test}>
