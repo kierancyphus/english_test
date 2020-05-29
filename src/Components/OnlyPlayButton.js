@@ -46,8 +46,7 @@ class OnlyPlayButton extends React.Component {
     // get the data and store it in state if it already existed
     else {
       if (this.cookie["viewed"].includes(this.question)){
-        this.state.disabled = true;
-        this.state.played = 2
+        this.state.played = 0
       }
     }
   }
@@ -92,11 +91,19 @@ class OnlyPlayButton extends React.Component {
     // Set the button as disabled so that they can't pause
     // the cookies are set after the promise to avoid async with the bar loading
     this.setState((state, props) => {
-      return {
-        playing: !state.playing,
-        disabled: true,
-        played: state.played + 1
+      if(state.played > 1){
+        return {
+          disabled: true
+        }
       }
+      else {
+        return {
+          playing: !state.playing,
+          played: state.played + 1
+      }
+
+      }
+
     }, () => {
       const cookies = new Cookies();
       const updated_viewed = cookies.get(this.test)["viewed"];
@@ -106,9 +113,14 @@ class OnlyPlayButton extends React.Component {
 
   handleEnd = () => {
     this.setState((state, props) => {
+      if(state.played > 1){
+        return {
+          disabled: true,
+          playing: false
+        }
+      }
       return {
         playing: false,
-        played: state.played + 1
       };
     });
   }
